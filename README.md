@@ -4,7 +4,7 @@
 * Podendo assim controlar o valor por hora no estacionamento, analisar a hora de entrada e de saída do veículo através do software do projeto e cobrar o cliente sem precisar calcular de forma manual.
 
 
-  * Rotas/Método/Função *
+  * <b> Rotas/Método/Função </b>
 * /clientes	|POST|	Inserção de novos clientes
 * /clientes	|GET|	Listar os clientes
 * /clientes:id	|GET|	Pegar o cliente pelo id
