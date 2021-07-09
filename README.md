@@ -5,12 +5,12 @@
 
 
  ## Rotas/Método/Função 🚀
- ----------    |---------------------------------
-* /clientes	   |POST|	Inserção de novos clientes
-* /clientes	   |GET|	Listar os clientes
-* /clientes:id	|GET|	Pegar o cliente pelo id
-* /clientes:id	|PUT|	Atualizar o cliente pelo id
-* /clientes:id	|DELETE|	Deletar o cliente
-* /precos	     |POST|	Inserção dos preços
-* /precos	     |GET|	Listar os preços
-* /precos	     |PUT|	Atualizar os preços
+ ----------     |---------   |------------
+* /clientes	     |POST|	     |Inserção de novos clientes
+* /clientes	     |GET|	      |Listar os clientes
+* /clientes:id	  |GET|	      |Pegar o cliente pelo id
+* /clientes:id	  |PUT|	      |Atualizar o cliente pelo id
+* /clientes:id	  |DELETE|	   |Deletar o cliente
+* /precos	       |POST|	     |Inserção dos preços
+* /precos	       |GET|	      |Listar os preços
+* /precos	       |PUT|	      |Atualizar os preços
