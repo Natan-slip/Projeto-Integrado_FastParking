@@ -1,0 +1,465 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+/* - CABEÇALHO - */
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    padding-top: 1vh;
+}
+    
+.icon{
+    height: 15vh;
+    width: 14vw;
+    margin-left: 5vh;
+}
+
+.title{
+    height: 18vh;
+    width: 45vw;
+    padding-top: .6vw
+}
+
+footer {
+    height: 50px;
+    background-color: rgb(255, 217, 0);
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* - ADICIONAR PREÇO - */
+
+.container-precos{
+    background-color: rgba(0,0,0,.8);
+    width: 100vw;
+    height: 100vh;
+    top: 0em;
+    left: 0em;
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    transition: 0.5s;
+}
+
+.container-precos.exibirModal{
+    z-index: 100;
+    opacity: 1;
+}
+
+.adicionarPreco{
+    background-color: rgb(255, 217, 0);
+    margin-top: 14vw;
+    width: 35vw;
+    height: 37vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2vh;
+    box-shadow: .2vh .2vh .5vh black;
+    border: solid 2px rgba(12, 12, 12, 0.6);
+}
+
+.adicionarPreco h2{
+    padding-top: 1vw;
+    margin-left: 2.5vh;
+    font-size: 4vh;
+    font-family: sans-serif;
+}
+
+.formulario-adicionarPreco{ 
+    padding-top: .8vw;
+    text-align: center;
+}
+
+.formulario-adicionarPreco p{
+    font-size: 2.7vh;
+    padding-top: 4vh;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.formulario-adicionarPreco input {
+    border-radius: .4vw;
+    height: 3.5vh;
+    width: 18vw;
+    margin-left: 1vh;
+    font-size: .8em;
+    letter-spacing: .04em;
+    text-indent: 1.5ch;
+    border: solid 1px transparent;
+}
+
+.acao-adicionarPreco{
+    text-align: center;
+}
+
+.acao-adicionarPreco button{
+    height: 4vh;
+    font-size: 1em;
+    width: 7vw;
+    border-radius: 1vh;
+    background-color: rgb(7, 7, 7);
+    color: rgb(255, 217, 0);
+    margin: 3vw 2vh;
+}
+
+.acoes-tabela button{
+    font-size: 2vh;
+    width: 3.2vw;
+    border-radius: .4vw;
+    border: solid .1vw #ffeedd;
+    background-color: #ffeedd;
+}
+
+/* - ADICIONAR VEICULO - */
+
+.adicionarVeiculo{
+    background-color: rgb(255, 217, 0);
+    width: 37vw;
+    height: 37vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1vh 1vh 0 0;
+    box-shadow: .2vh 0vh .5vh black;
+}
+
+.formulario-adicionarVeiculo p{
+    font-size: 1.6vw;
+    padding-top: 4vh;
+    font-family: 'Goudy Old Style';
+    font-weight: bold;
+}
+
+.formulario-adicionarVeiculo input{
+    border-radius: 0.4vw;
+    height: 4vh;
+    width: 20vw;
+    margin-left: .5vh;
+    font-size: 1.3vw;
+    letter-spacing: .03vw;
+    text-indent: 1ch;
+    border: solid .15vw rgba(2, 2, 2, 0.7);
+}
+
+.formulario-adicionarVeiculo .placa{
+    margin-left: 1.7vh;
+}
+
+.adicionarVeiculo h2{
+    padding-top: .8vw;
+    text-align: center;
+    font-size: 3.8vh;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .1vw;
+}
+
+.acao-adicionarVeiculo button{
+    height: 4vh;
+    width: 7vw;
+    border-radius: 1vh;
+    background-color: rgb(0, 0, 0);
+    margin: 3vw 2vh;
+    border: solid 1px rgb(0, 0, 0);
+    font-size: 1vw;
+    color: rgb(255, 217, 0);
+} 
+
+.acao-adicionarPreco p{
+    font-size: 1.2vw;
+}
+
+.formulario-adicionarVeiculo{ 
+    padding-top: 2vh;
+    text-align: center;
+} 
+
+.container-addVeiculo{
+    padding-top: 2.5vw;
+    height: 37vh;
+}
+
+.acao-adicionarVeiculo{
+    text-align: center;
+}
+
+#btnRelatorio{
+    padding-top: .4vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5vh;
+    width: 37vw;
+}
+
+.btnRelatorio{
+    height: inherit;
+    font-size: 1.4vw;
+    letter-spacing: .1vh;
+    width: inherit;
+    border-radius: 0 0 1vh 1vh;
+    background-color: rgb(255, 217, 0);
+    box-shadow: .2vh .2vh .5vh black;
+    border: solid 0px rgb(0, 0, 0);
+    font-weight: bold;
+    font-family: georgia;
+}
+
+/* - TABELA VEICULO - */
+
+.campos-veiculo th{
+    background-color: rgb(255, 217, 0);
+    border-radius: .8vh;
+    height: 4vh;
+    width: 16%;
+    font-size: 1.2vw;
+    font-family: sans-serif;
+    letter-spacing: .05vw;
+}
+
+.container-tabelaVeiculos{
+    padding-top: 5vw;
+}
+
+.container-veiculos{
+    height: 9vw;
+    overflow: auto;
+    width: 65vw;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tabela-veiculos{
+    width: inherit;
+    margin: 0 auto;
+    border-radius: .4em;
+}
+
+.tabela-veiculos tbody td{
+    padding: .2vw 0vw;
+    text-align: center;
+    background-color: rgb(255, 217, 0);
+    border-radius: .8vh;
+    height: 1vw;
+    font-size: 1.1vw;
+} 
+
+.tabela-veiculos tbody td button{
+    font-size: 1vw;
+}
+
+/* - COMPROVANTE - */
+
+.container-comprovante{
+    background-color: rgba(0, 0, 0,0.9);
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    transition: 0.5s;
+}
+
+.container-comprovante.exibirModal{
+    z-index: 100;
+    opacity: 1;
+}
+
+.comprovante{
+    height: 100vh;
+    width: 47vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+.titulo-comprovante{
+    text-align: center;
+    padding-top: 3.5vw;
+}
+
+.titulo-comprovante h2{
+    text-align: center;
+    font-size: 1.7vw;
+    text-transform: uppercase;
+    letter-spacing: .1vw;
+    font-family: arial black;
+}
+
+.subtitulo-comprovante h3{
+    margin-left: 1.5vh;   
+    padding-bottom: .5vw;
+    font-size: 1.7vw;
+}
+
+.subtitulo-comprovante{
+    height: 10vh;
+    margin-top: 10vh;
+    margin-left: 10vh;
+}
+
+.formulario-comprovante{
+    padding-top: 4vw;
+    height: 40vh;
+    text-align: center;
+}
+
+.formulario-comprovante p{
+    padding-top: 3vh;
+    font-size: 1.3vw;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.formulario-comprovante input{
+    border-left: solid 0 white;
+    border-right: solid 0 white;
+    border-top: solid 0 white;
+    border-bottom: solid .1vw black;
+    margin-left: 2vh;
+    width: 15vw;
+    text-indent: 1ch;
+    font-size: 1.3vw;
+}
+
+.formulario-comprovante #txtNome{
+    margin-left: 3vh;
+}
+.formulario-comprovante #txtData{
+    margin-left: 4.5vh;
+}
+
+.formulario-comprovante #txtHora{
+    margin-left: 3.7vh;
+}
+
+.acoes-comprovante{
+    padding-top: 2vw;
+    text-align: center;
+}
+
+.acoes-comprovante button{
+    height: 4.5vh;
+    width: 8vw;
+    border-radius: 1vh;
+    background-color: #899;
+    margin: 1vw 2vw;
+    border: solid .1vw gray;
+}
+
+.acoes-comprovante p{
+    font-size: 1.1vw;
+    font-weight: bold;
+    color: black;
+}
+
+hr{
+    border-color:#aaa;
+    box-sizing:border-box;
+    width: 36.5vw;
+    height: .01vh;
+    border: solid .04vw black;
+}
+
+/* - RELATÓRIO - */
+
+.container-relatorio{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    transition: .3s;
+}
+
+.container-relatorio.exibirModal{
+    z-index: 100;
+    opacity: 1;
+}
+
+.btnSaidaRelatorio{
+    text-align: center;
+}
+
+.relatorio{
+    height: 100vh;
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+.campos-relatorio th{
+    background-color: rgb(255, 217, 0);
+    height: 4vh;
+    width: 16%;
+    font-size: 1.2vw;
+    font-family: sans-serif;
+}
+
+.container-tabela-relatorio{
+    height: 50vh;
+    overflow: auto;
+    width: 65vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.relatorio .titulo{
+    text-align: center;
+    font-size: 1.6vw;
+    text-transform: uppercase;
+    letter-spacing: .1vw;
+    font-family: arial black;
+    padding-bottom: 5vw;
+    padding-top: 1.5vw;
+}
+
+.tabela-relatorio{
+    width: 64.8vw;
+    margin: 0 auto;
+}
+
+.tabela-relatorio tbody td{
+    padding-top: 0.3vw;
+    padding-bottom: 0.3vw;
+    font-size: 1.1vw;
+    text-align: center;
+    background-color: rgb(255, 217, 0);
+} 
+
+.btnSaidaRelatorio button{
+    margin-top: 1.5vw;
+    height: 5vh;
+    font-size: 1.3vw;
+    width: 15vw;
+    border-radius: 1vh;
+    border: solid 1px transparent;
+    background-color: rgb(255, 217, 0);
+}
+
+.tabela-relatorio th{
+    width: 25%; 
+}
+   
+/* - HOVER - */
+
+.btnRelatorio:hover, .acao-adicionarVeiculo button:hover, .acoes-comprovante button:hover, .acoes-comprovante button p:hover, .tabela-veiculos tbody td button:hover, .acao-adicionarPreco button:hover, .btnSaidaRelatorio button:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 217, 0);
+    cursor: pointer;
+    border: solid .1vw #ffeedd;
+}

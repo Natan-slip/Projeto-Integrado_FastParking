@@ -12,12 +12,19 @@ class Carro{
     public $horaEntrada;
     public $horaSaida;
     public $valorPago;
-    public $statusCarro;
     
 
     public function listaTodos(){
 
-        $sql = " SELECT * FROM tblCarros ";
+        $sql = " SELECT idCarro,
+        idPreco, 
+        nome, 
+        placa, 
+        date_format(dataEntrada, '%d/%m/%Y') as dataEntrada,
+        time_format(horaEntrada, '%H:%i') as horaEntrada,
+        time_format(horaSaida, '%H:%i') as horaSaida,
+        valorPago,
+        FROM tblCarros ";
 
         $stmt = Model::getConexao()->prepare($sql);
         $stmt->execute();
@@ -36,14 +43,13 @@ class Carro{
     public function inserir(){
 
         $sql = " INSERT INTO tblCarros
-                 (nome, placa, statusCarro, idPreco, dataEntrada, horaEntrada)
+                 (nome, placa, idPreco, dataEntrada, horaEntrada)
                  VALUES
                  (curdate(), curtime(), ?, ?, ?, ?) ";
 
         $stmt = Model::getConexao()->prepare($sql);
         $stmt->bindValue(1, $this->nome);
         $stmt->bindValue(2, $this->placa);
-        $stmt->bindValue(3, $this->statusCarro);
         $stmt->bindValue(4, $this->idPreco);
 
         if ($stmt->execute()) {
@@ -72,7 +78,15 @@ class Carro{
 
     public function buscarId($id){
 
-        $sql = " SELECT * FROM tblCarros WHERE idCarros = ? ";
+        $sql = " SELECT idCarro,
+        idPreco, 
+        nome, 
+        placa, 
+        date_format(dataEntrada, '%d/%m/%Y') as dataEntrada,
+        time_format(horaEntrada, '%H:%i') as horaEntrada,
+        time_format(horaSaida, '%H:%i') as horaSaida,
+        valorPago,
+        FROM tblCarros WHERE idCarro = ? ";
 
         $stmt = Model::getConexao()->prepare($sql);
         $stmt->bindValue(1, $id);
@@ -89,7 +103,6 @@ class Carro{
             $this->horaEntrada = $carro->horaEntrada;
             $this->horaSaida = $carro->horaSaida;
             $this->valorPago = $carro->valorPago;
-            $this->statusCarro = $carro->statusCarro;
            
             
             return $this;
@@ -150,19 +163,19 @@ class Carro{
 
     public function atualizar(){
 
-        $sql = " UPDATE tblCarros SET nome = ?, placa = ? WHERE idCarros = ? ";
+        $sql = " UPDATE tblCarros SET nome = ?, placa = ? WHERE idCarro = ? ";
 
         $stmt = Model::getConexao()->prepare($sql);
         $stmt->bindValue(1, $this->nome);
         $stmt->bindValue(2, $this->placa);
-        $stmt->bindValue(3, $this->idCarros);
+        $stmt->bindValue(3, $this->idCarro);
 
         return $stmt->execute();
     }
 
     public function delete(){
 
-        $sql = " UPDATE tblCarros SET horaSaida = curtime(), valorPago = ?, statusCarro = 0  WHERE idCarro = ? ";
+        $sql = " UPDATE tblCarros SET horaSaida = curtime(), valorPago = ?, WHERE idCarro = ? ";
 
         $stmt = Model::getConexao()->prepare($sql);
         $stmt->bindValue(1, $this->valorPago);

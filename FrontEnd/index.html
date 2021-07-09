@@ -1,0 +1,150 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title>FastParkingV²</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <!-- ESTACIONAMENTO -->
+        <div class="container-estacionamento">
+            
+            <!-- ENTRADA DE CARROS -->
+            <div class="container-entrada">
+                <div class="titulo">
+
+                    <!-- TITULO DA ENTRADA -->
+                    <img src="images/title.png" alt="" title="" class="title">
+                    <img src="images/FastParking1.png" alt="" title="Sistema FastParking" class="icon">
+                </div>
+            </div>
+            
+            <!-- CONTAINER DA TABELA ADICIONAR VEICULO -->
+            <div class="container-addVeiculo">
+
+                <!-- TABELA ADD VEICULO -->
+                <div class="adicionarVeiculo">
+                    <h2>Entrada de Veículos</h2>
+
+                    <!-- DADOS DO ADD VEICULO -->
+                    <div class="formulario-adicionarVeiculo" >
+                        <p>Nome:
+                        <input id="nome" type="text" placeholder="Insira seu nome">
+                        <p>Placa:
+                        <input id="placa" class="placa" type="text" placeholder="Inserir placa" onkeyup="alteraMaiusculo()">
+                    </div>
+                    
+                    <!-- BOTÕES DO ADICIONAR VEICULO -->
+                    <div class="acao-adicionarVeiculo"> 
+                        <button id="btnAdicionar" title="Adicionar Veículo"><p>Adicionar</p></button>
+                        <button id="btnPrecos" title="Inserir Preço"><p>Preços</p></button>
+                    </div>
+                </div>
+            </div> 
+            <div id="btnRelatorio">
+                <button class="btnRelatorio" title="Ver Relatório">Ver Saída/Preço Diário</button>
+            </div>
+
+            <!-- TABELA DOS VEICULOS -->
+            <div class="container-tabelaVeiculos">
+                <div class="container-veiculos">
+                    <table class="tabela-veiculos">
+                        <thead class="campos-veiculo">
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Nome</th>
+                                <th>Placa</th>
+                                <th>Data</th>
+                                <th>Hora</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody class="registros-veiculo" id="registros">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- PREÇOS -->
+            <div class="container-precos">
+                <div class="adicionarPreco">
+                    <h2>Preços</h2>
+                    
+                    <!-- DADOS DO ADD VEICULO -->
+                    <div class="formulario-adicionarPreco">
+                        <p>Primeira hora:
+                        <input id="btnHora" type="text" placeholder="Primeiro Valor">
+                        <p>Demais horas:
+                        <input id="btnDemaishoras" class="placa" type="text" placeholder="Valor Restante">
+                    </div>
+                    
+                    <!-- BOTÕES DO CONTAINER PREÇOS -->
+                    <div class="acao-adicionarPreco"> 
+                        <button id="btnSalvar"><p>Salvar</p></button>
+                        <button id="btnFecharPreco"><p>Cancelar</p></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- COMPROVANTE DE ENTRADA -->
+            <div class="container-comprovante">
+                <div class="comprovante">
+                    <div class="titulo-comprovante">
+                        <h2>Sistema FastParking</h2>
+                        <img src="" alt="" title="Sistema FastParking">
+                    </div>
+                    <div class="subtitulo-comprovante">
+                        <h3>Comprovante</h3>
+                    </div>
+                    <div class="formulario-comprovante">
+                        <p>Nome:  <input id="txtNome" type="text"></p>
+                        <p>Placa: <input id="txtPlaca" type="text"></p>
+                        <p>Data:  <input id="txtData" type="text"></p>
+                        <p>Hora:  <input id="txtHora" type="text"></p>
+                    </div>
+                    <div class="acoes-comprovante">
+                        <button id="btnImprimir"><p>Imprimir</p></button>
+                        <button id="btnFecharComp"><p>Cancelar</p></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RELATORIO DO DIA -->
+            <div class="container-relatorio">
+                <div class="relatorio">
+                    <div class="titulo">
+                        <h2>Relatório</h2>
+                        <img src="" alt="">
+                    </div>
+                    <div class="container-tabela-relatorio">
+                        <table class="tabela-relatorio">
+                            <thead class="campos-relatorio">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Entrada Data / Hora</th>
+                                    <th>Saída Data / Hora</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody class="registros-relatorio" id="registrosRelatorio">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btnSaidaRelatorio">
+                        <button id="btnSairRelatorio">Voltar ao início</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="main.js" type="text/javascript"></script>
+        
+        <footer>
+            <div>
+                <small>Copyright &copy; Natã Sato Rodrigues</small>
+            </div>
+        </footer>
+    </body>
+
+</html>

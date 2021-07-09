@@ -86,6 +86,26 @@ class Carros extends Controller{
             exit();
         }
 
+        $valorPrimeiraHora = $carroModel->getPreco()->primeiraHora;
+        $valorDemaisHoras = $carroModel->getPreco()->demaisHoras;
+
+        $horaEntrada = floatval($carroModel->getHourIn($carroModel->horaEntrada)->hora);
+        $carroModel->horaSaida = $carroModel->getNowHour()->hora;
+        $horaSaida = floatval($carroModel->getHourIn($carroModel->horaSaida)->hora);
+
+        $horaEstacionado = $horaEntrada - $horaSaida;
+        if ($horaEstacionado < 0) {
+            $horaEstacionado *= -1;
+        }
+        if ($horaEstacionado > 1) {
+            $demaishoraEstacionado = $horaEstacionado - 1;
+            $carroModel->valorPago = $demaishoraEstacionado * floatval($valorDemaisHoras);
+            $carroModel->valorPago += floatval($valorPrimeiraHora);
+        } else {
+            $carroModel->valorPago = floatval($valorPrimeiraHora);
+        }
+
+
         if ($carroModel->delete()) {
             
             http_response_code(204);

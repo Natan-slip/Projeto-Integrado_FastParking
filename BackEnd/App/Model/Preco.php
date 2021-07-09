@@ -25,6 +25,28 @@ class Preco{
         }
     }
 
+    public function buscarId($id){
+
+        $sql = " SELECT * FROM tblPrecos WHERE idPreco= ?";
+
+        $stmt = Model::getConexao()->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            $preco = $stmt->fetch(PDO::FETCH_OBJ);
+
+            $this->idPreco = $preco->idPreco;
+            $this->primeiraHora = $preco->primeiraHora;
+            $this->demaisHoras = $preco->demaisHoras;
+            
+
+            return $this;
+        } else {
+            return false;
+        }
+    }
+
     public function inserir(){
 
         $sql = " INSERT INTO tblPrecos (primeiraHora, demaisHoras) VALUES  (now(), ?, ?) ";
@@ -43,7 +65,7 @@ class Preco{
 
     public function atualizar() {
 
-        $sql = " UPDATE tblPrecos SET umaHora = ?, demaisHoras = ? WHERE idPreco = ? ";
+        $sql = " UPDATE tblPrecos SET primeiraHora = ?, demaisHoras = ? WHERE idPreco = ? ";
 
         $stmt = Model::getConexao()->prepare($sql);
         $stmt->bindValue(1, $this->primeiraHora);
